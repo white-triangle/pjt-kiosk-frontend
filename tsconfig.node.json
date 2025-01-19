@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "incremental": true,  // 증분 컴파일 활성화 (빌드 성능 향상)
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",  // 증분 컴파일 정보 저장 위치
+    "target": "ES2022", // 컴파일될 JS 버전
+    "lib": ["ES2023"], // 사용할 JS API 버전
+    "module": "ESNext", // 모듈 시스템 (최신 ES 모듈)
+    "skipLibCheck": true, // 선언 파일(.d.ts) 타입 체크 스킵
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",  // Vite 같은 번들러용 모듈 해석 전략
+    "allowImportingTsExtensions": true,  // .ts 확장자 import 허용
+    "isolatedModules": true, // 각 파일을 독립적으로 컴파일
+    "moduleDetection": "force", // 모든 파일을 모듈로 처리
+    "noEmit": true,  // JS 파일 생성하지 않음 (Vite가 처리) noEmit: true인 경우: TypeScript는 타입 체크만 하고, 변환(컴파일)은 Vite가 처리
+
+    /* Linting */
+    "strict": true,  // 엄격한 타입 체크
+    "noUnusedLocals": true, // 사용하지 않는 지역 변수 체크
+    "noUnusedParameters": true, // 사용하지 않는 매개변수 체크
+    "noFallthroughCasesInSwitch": true // switch문에서 누락된 케이스 체크
+  },
+  "include": ["vite.config.ts"]
+}
