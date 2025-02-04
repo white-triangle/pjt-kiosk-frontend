@@ -1,3 +1,13 @@
+---
+name: "[dev] FETURE,FIX PR"
+about: "[dev] FETURE,FIX PR"
+title: ''
+labels: documentation
+assignees: beanbeeean, ystgd07
+
+---
+
+
 ## 🔍 관련 이슈
 - 이슈 번호: #
 
