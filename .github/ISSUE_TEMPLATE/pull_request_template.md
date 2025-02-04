@@ -1,3 +1,12 @@
+---
+name: "Feture,Fix PR"
+about: "Feture,Fix PR"
+title: '[Feture]'
+labels: documentation
+assignees: beanbeeean, ystgd07
+
+---
+
 ## 🔍 관련 이슈
 - 이슈 번호: #
 
