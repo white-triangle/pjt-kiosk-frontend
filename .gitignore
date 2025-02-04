@@ -7,6 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 Test.tsx
+.App.tsx
 
 node_modules
 dist

@@ -1,0 +1,111 @@
+.carousel-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0 24px;
+    transition: all 0.3s ease;
+}
+
+.carousel-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 0;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #E5E7EB;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: #D1D5DB;
+    }
+
+    &.active {
+        background: #6B7280;
+        transform: scale(1.2);
+    }
+}
+
+.table-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 16px 0;
+    flex: 1;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.table-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 160px;
+    height: 120px;
+    flex-shrink: 0;
+
+    // 사용 가능 상태 스타일
+    &.table-status-card__bg-completed {
+        background: #F0FDF4;
+        border: 1px solid #BBF7D0;
+
+        .table-item__number {
+            color: #166534;
+        }
+
+        .table-item__status {
+            color: #16A34A;
+        }
+
+        &:hover {
+            background: #DCFCE7;
+        }
+    }
+
+    // 사용중 상태 스타일
+    &.table-status-card__bg-processing {
+        background: #FEF2F2;
+        border: 1px solid #FECACA;
+
+        .table-item__number {
+            color: #991B1B;
+        }
+
+        .table-item__status {
+            color: #DC2626;
+        }
+
+        &:hover {
+            background: #FEE2E2;
+        }
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    &__number {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+
+    &__status {
+        font-size: 14px;
+        font-weight: 500;
+    }
+} 
