@@ -1,0 +1,28 @@
+.dashboard {
+    padding: 24px;
+
+    &__flex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px; 
+    }
+
+    &__item {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        height: 320px;
+        
+        &:nth-child(-n+2) {
+            flex: 1;
+            // 반응형(Width) 디자인 적용 
+            min-width: 400px;
+        }
+        
+        &:nth-child(3) {
+            width: 100%;
+            height: 464px;
+        }
+    }
+} 

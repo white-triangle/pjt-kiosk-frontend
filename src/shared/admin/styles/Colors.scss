@@ -1,0 +1,29 @@
+.order-status-card {
+    &__bg-processing {
+        background-color: #FEFCE8;
+    }
+    &__bg-completed {
+        background-color: #F0FDF4;
+    }
+    &__text-processing {
+        color: #CA8A04;
+    }
+    &__text-completed {
+        color: #16A34A;
+    }
+}
+
+.table-status-card {
+    &__bg-processing {
+        background-color: #FEFCE8;
+    }
+    &__bg-completed {
+        background-color: #F0FDF4;
+    }
+    &__text-processing {
+        color: #CA8A04;
+    }
+    &__text-completed {
+        color: #16A34A;
+    }
+}

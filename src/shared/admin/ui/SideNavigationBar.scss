@@ -1,0 +1,36 @@
+.side-nav {
+    // 컨테이너 스타일
+    &__container {
+        @apply flex flex-col w-64 h-screen p-7 bg-white shadow-md;
+        position: fixed;  // 고정 위치
+        z-index: 1100;   // NavigationBar(1000)보다 높은 값
+        top: 0;          // 최상단에 위치
+        left: 0;         // 왼쪽에 위치
+    }
+
+    &__logo {
+        @apply text-2xl font-bold;
+        width: 100%;
+        height: 65px;
+    }
+
+    &__list {
+        @apply flex flex-col gap-4 text-sm text-gray-500 font-bold;
+    }
+
+    &__item {
+        @apply flex items-center gap-2 px-2 py-4 w-56 h-9 rounded-lg;
+        
+        // hover 상태 스타일
+        @apply hover:text-black hover:cursor-pointer hover:bg-gray-100;
+
+        // 아이콘과 텍스트 정렬
+        .icon {
+            @apply flex items-center justify-center;
+        }
+
+        .text {
+            @apply flex-1;
+        }
+    }
+} 
