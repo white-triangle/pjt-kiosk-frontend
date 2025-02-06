@@ -1,0 +1,28 @@
+.header-navigationbar {
+    max-width: 550px;
+    height: 75px;
+    margin: 0 auto;
+    // background-color: #ffffff;
+    border-bottom: 1px solid #ccc;
+
+    .table-info {
+        // background-color: aquamarine;
+        height: 45px;
+
+        span {
+            color: #4b5563;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        div {
+            width: 40px;
+            height: 40px;
+            background-color: #000000;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 20%;
+        }
+    }
+}

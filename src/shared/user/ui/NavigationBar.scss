@@ -1,0 +1,12 @@
+.navigation-bar {
+    // width: 1184px;
+    height: 64px;
+    margin: 0 auto; // 가운데 정렬
+    background-color: #ffffff; // 배경색 추가
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // 그림자 효과 추가
+    position: absolute; // 상단에 고정
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); // 가운데 정렬을 위한 transform
+    z-index: 1000; // 다른 요소들 위에 표시
+} 
