@@ -1,3 +1,5 @@
+import '@/shared/admin/styles/List.scss'
+
 export default function OrderItems() {
     return (
         <div className='flex flex-col divide-y divide-gray-200 list__items'>
