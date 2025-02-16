@@ -1,6 +1,7 @@
 import NavigationBar from '@/shared/admin/ui/NavigationBar'
 import SideNavigationBar from '@/shared/admin/ui/SideNavigationBar'
 import AdminDashboard from './dashboard'
+import Menu from './menu'
 import './AdminMain.scss'
 
 export default function AdminMain() {
@@ -9,7 +10,8 @@ export default function AdminMain() {
             <NavigationBar />
             <SideNavigationBar />
             <div className='content-wrapper'>
-                <AdminDashboard />
+                {/* <AdminDashboard /> */}
+                <Menu />
             </div>
         </div>
     )

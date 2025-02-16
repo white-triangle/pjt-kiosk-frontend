@@ -1,0 +1,53 @@
+.menu-list-header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background-color: #F9FAFB;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid #E5E7EB;
+
+    &__item {
+        font-weight: 600;
+        font-size: 14px;
+        color: #6B7280;
+        padding: 0 8px;
+    }
+
+    // 이미지 열
+    &__image {
+        width: 10%;
+        min-width: 80px;
+    }
+
+    // 메뉴명 
+    &__name {
+        width: 25%;
+        min-width: 150px;
+    }
+
+    // 카테고리
+    &__category {
+        width: 15%;
+        min-width: 100px;
+    }
+
+    // 가격
+    &__price {
+        width: 15%;
+        min-width: 100px;
+    }
+
+    // 상태 
+    &__status {
+        width: 15%;
+        min-width: 100px;
+        text-align: center;
+    }
+
+    // 관리 버튼 영역 
+    &__actions {
+        width: 20%;
+        min-width: 120px;
+        text-align: center;
+    }
+} 

@@ -1,10 +1,11 @@
 import MenuHeader from './MenuHeader'
 import MenuItems from './MenuItems'
+import '../style/MenuList.scss'
 
 export default function MenuList() {
     // 이미지,메뉴명,카테고리,가격
     return (
-        <div className='flex flex-col gap-4'>
+        <div className='menu-list__container'>
             <MenuHeader />
             <MenuItems />
         </div>

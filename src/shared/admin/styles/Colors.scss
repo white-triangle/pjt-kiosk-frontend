@@ -11,6 +11,29 @@
     &__text-completed {
         color: #16A34A;
     }
+    &__blue-text{
+        color: #1D4ED8;
+    }
+
+    // Status 배경색
+    &__blue-bg{
+        background-color: #EFF8FF;
+    }
+    &__green-bg{
+        background-color: #F0FDF4;
+    }
+    &__red-bg{
+        background-color: #FEF3F2;
+    }   
+
+    // Status 텍스트 색
+    &__green-text{
+        color: #0FAA4D;
+    }
+    &__red-text{
+        color: #E5231D;
+    }
+
 }
 
 .table-status-card {

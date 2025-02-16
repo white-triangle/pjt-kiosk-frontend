@@ -1,0 +1,53 @@
+.order-list__container {
+    height: 240px;
+    overflow-y: auto;
+    
+    /* 스크롤바 스타일링 */
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 3px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 3px;
+        
+        &:hover {
+            background: #555;
+        }
+    }
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    
+    &.order-status-card__text-processing {
+        background-color: rgba(var(--processing-rgb), 0.1);
+    }
+    
+    &.order-status-card__text-completed {
+        background-color: rgba(var(--completed-rgb), 0.1);
+    }
+}
+
+.loading-spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+} 
