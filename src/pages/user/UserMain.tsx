@@ -13,7 +13,8 @@ export default function UserMain() {
                     {/* <UserOrder /> */}
                     <UserDetail/>
                 </div>
-                <NavigationBar/>
+                {/* Detail 페이지에서는 안나오도록 */}
+                {/* <NavigationBar/> */}
             </div>
         </div>
     )
