@@ -1,18 +1,32 @@
 .menuitem-wrap {
-    background-color: red;
-    height: 145px;
-    border-radius: 10px;
+    background-color: #ffffff;
+    height: 128px;
     .menu-img {
-        width: 140px;
+        // width: 140px;
         height: 100%;
 
         img {
-            width: 128px;
+            min-width: 128px;
             height: 128px;
         }
     }
 
     .menu-info {
         height: 135px;
+        font-weight: 800;
+
+        h5{
+            
+            font-size: 16px;
+        }
+
+        .menu-detail{
+            font-size: 14px;
+            color: #6B7280;
+        }
+
+        .menu-price{
+            font-size: 17px;
+        }
     }
 }
