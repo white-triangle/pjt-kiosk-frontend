@@ -1,8 +1,8 @@
 import NavigationBar from '@/shared/user/ui/NavigationBar'
-import UserItem from './item'
 import UserOrder from './order'
 import './UserMain.scss'
 import HeaderNavigationBar from '@/shared/user/ui/HeaderNavigationBar'
+import UserDetail from './detail'
 
 export default function UserMain() {
     return (
@@ -11,7 +11,7 @@ export default function UserMain() {
                 <HeaderNavigationBar />
                 <div className='content-wrapper'>
                     {/* <UserOrder /> */}
-                    <UserItem />
+                    <UserDetail/>
                 </div>
                 <NavigationBar/>
             </div>

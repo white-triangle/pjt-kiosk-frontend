@@ -1,5 +1,4 @@
 .user-main {
-    min-height: 100vh;
     background-color: #f9fafb;
 
     .user-wrap {
@@ -8,11 +7,13 @@
         margin: 0 auto;
         // background-color: #fff;
         border: 1px solid #000;
-        height: 100vh;
+        position: relative;
+        min-height: 100vh;
 
         .content-wrapper {
             max-width: 550px;
             margin: 30px auto;
         }
+        
     }
 }
