@@ -1,0 +1,23 @@
+.menu-widget {
+
+    &__status{
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        margin-top: 45px;
+        margin-bottom: 45px;
+        justify-content: center;
+
+
+        &__items{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 342px;
+            height: 68px;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+    }
+}

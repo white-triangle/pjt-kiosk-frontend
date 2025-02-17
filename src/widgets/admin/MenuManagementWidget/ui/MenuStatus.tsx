@@ -5,7 +5,7 @@ export default function MenuStatus() {
         <div className='flex flex-row-reverse mb-4'>
             <div className='flex flex-col items-center'>
                 <div className='tab__item tab__item-inactive mb-1 text-red-400'>
-                    재고소진
+                    품절
                 </div>
                 <div className='tab__line-red'></div>
             </div>
