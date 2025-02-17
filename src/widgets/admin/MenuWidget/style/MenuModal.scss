@@ -1,0 +1,230 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalFadeIn 0.3s ease;
+
+    // 스크롤바 전체 영역
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    // 스크롤바 트랙(배경)
+    &::-webkit-scrollbar-track {
+        background: #F3F4F6;
+        border-radius: 4px;
+    }
+
+    // 스크롤바 썸(움직이는 부분)
+    &::-webkit-scrollbar-thumb {
+        background: #D1D5DB;
+        border-radius: 4px;
+        
+        &:hover {
+            background: #9CA3AF;
+        }
+    }
+
+    // Firefox 스크롤바 스타일링
+    scrollbar-width: thin;
+    scrollbar-color: #D1D5DB #F3F4F6;
+}
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 1px solid #E5E7EB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #111827;
+    }
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #6B7280;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: #111827;
+    }
+}
+
+.modal-form {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: #374151;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #E5E7EB;
+        border-radius: 6px;
+        font-size: 14px;
+        color: #111827;
+        transition: all 0.2s ease;
+
+        &:focus {
+            outline: none;
+            border-color: #2563EB;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+        }
+    }
+
+    textarea {
+        min-height: 100px;
+        resize: vertical;
+        
+        // textarea 스크롤바 스타일링
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #F3F4F6;
+            border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #D1D5DB;
+            border-radius: 4px;
+            
+            &:hover {
+                background: #9CA3AF;
+            }
+        }
+
+        // Firefox textarea 스크롤바
+        scrollbar-width: thin;
+        scrollbar-color: #D1D5DB #F3F4F6;
+    }
+}
+
+.image-upload-area {
+    border: 2px dashed #E5E7EB;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        border-color: #2563EB;
+        background-color: #F8FAFC;
+    }
+}
+
+.upload-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: #6B7280;
+
+    .upload-icon {
+        font-size: 24px;
+    }
+
+    span {
+        font-size: 14px;
+        
+        small {
+            color: #9CA3AF;
+        }
+    }
+}
+
+.image-preview {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 4px;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+
+    button {
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .cancel-button {
+        background-color: white;
+        border: 1px solid #E5E7EB;
+        color: #374151;
+
+        &:hover {
+            background-color: #F3F4F6;
+            border-color: #D1D5DB;
+        }
+    }
+
+    .submit-button {
+        background-color: #2563EB;
+        border: none;
+        color: white;
+
+        &:hover {
+            background-color: #1D4ED8;
+        }
+    }
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 

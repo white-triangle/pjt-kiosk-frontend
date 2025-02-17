@@ -10,6 +10,7 @@ interface MenuItem {
     name: string
     category: string
     price: number
+    description: string
     status: 'available' | 'soldout'
 }
 
@@ -34,6 +35,7 @@ const TEST_RESPONSE: MenuListResponse = {
             name: '아메리카노',
             category: '음료',
             price: 4500,
+            description: '',
             status: 'available',
         },
         {
@@ -42,6 +44,7 @@ const TEST_RESPONSE: MenuListResponse = {
             name: '카페라떼',
             category: '음료',
             price: 5000,
+            description: '',
             status: 'available',
         },
         {
@@ -50,6 +53,7 @@ const TEST_RESPONSE: MenuListResponse = {
             name: '에그 샌드위치',
             category: '메인',
             price: 6500,
+            description: '',
             status: 'soldout',
         },
         {
@@ -58,6 +62,7 @@ const TEST_RESPONSE: MenuListResponse = {
             name: '당근 케이크',
             category: '디저트',
             price: 5500,
+            description: '',
             status: 'available',
         },
         {
@@ -66,6 +71,7 @@ const TEST_RESPONSE: MenuListResponse = {
             name: '얼그레이 티',
             category: '음료',
             price: 4000,
+            description: '',
             status: 'available',
         },
     ],
