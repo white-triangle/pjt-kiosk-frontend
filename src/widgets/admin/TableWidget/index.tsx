@@ -3,6 +3,7 @@ import TableHeader from './ui/TableHeader'
 import TableSearch from './ui/TableSearch'
 import TableStatus from './ui/TableStatus'
 import TableImageList from './ui/TableImageList'
+import TableList from './ui/TableList'
 
 export default function TableWidget() {
     return (
@@ -14,6 +15,7 @@ export default function TableWidget() {
                 <TableSearch />
             </div>
             <TableImageList />
+            <TableList />
         </div>
     )
 }
