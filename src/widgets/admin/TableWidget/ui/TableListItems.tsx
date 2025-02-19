@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import '@/widgets/admin/TableWidget/style/TableWidget.scss'
 import { HiUsers } from 'react-icons/hi2'
 import { FiEdit2 } from 'react-icons/fi'
 import { RiDeleteBinLine } from 'react-icons/ri'
+import TableModal from './TableModal'
 
 interface TableItem {
     id: string
@@ -20,52 +22,73 @@ export default function TableListItems({
     onEdit,
     onDelete,
 }: TableListItemsProps) {
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [selectedItem, setSelectedItem] = useState<TableItem | null>(null)
+
+    const handleEdit = (item: TableItem) => {
+        setSelectedItem(item)
+        setIsModalOpen(true)
+    }
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false)
+        setSelectedItem(null)
+    }
+
     return (
-        <div className='table-list-items'>
-            {items.map((table) => (
-                <div key={table.id} className='table-list-item'>
-                    <div className='table-list-cell table-list-cell__id'>
-                        {table.id}
-                    </div>
-                    <div className='table-list-cell table-list-cell__capacity'>
-                        <HiUsers className='capacity-icon' />
-                        <span>{table.capacity}인</span>
-                    </div>
-                    <div className='table-list-cell table-list-cell__status'>
-                        <span
-                            className={`status-badge ${
-                                table.status === 'available'
-                                    ? 'status-badge--available'
-                                    : 'status-badge--in-use'
-                            }`}>
-                            <div
-                                className={`status-dot ${
+        <>
+            <div className='table-list-items'>
+                {items.map((table) => (
+                    <div key={table.id} className='table-list-item'>
+                        <div className='table-list-cell table-list-cell__id'>
+                            {table.id}
+                        </div>
+                        <div className='table-list-cell table-list-cell__capacity'>
+                            <HiUsers className='capacity-icon' />
+                            <span>{table.capacity}인</span>
+                        </div>
+                        <div className='table-list-cell table-list-cell__status'>
+                            <span
+                                className={`status-badge ${
                                     table.status === 'available'
-                                        ? 'status-dot--available'
-                                        : 'status-dot--in-use'
-                                }`}
-                            />
-                            {table.status === 'available'
-                                ? '사용가능'
-                                : '사용 중'}
-                        </span>
+                                        ? 'status-badge--available'
+                                        : 'status-badge--in-use'
+                                }`}>
+                                <div
+                                    className={`status-dot ${
+                                        table.status === 'available'
+                                            ? 'status-dot--available'
+                                            : 'status-dot--in-use'
+                                    }`}
+                                />
+                                {table.status === 'available'
+                                    ? '사용가능'
+                                    : '사용 중'}
+                            </span>
+                        </div>
+                        <div className='table-list-cell table-list-cell__actions'>
+                            <button
+                                onClick={() => handleEdit(table)}
+                                className='action-button action-button--edit'
+                                title='수정'>
+                                <FiEdit2 />
+                            </button>
+                            <button
+                                onClick={() => onDelete(table.id)}
+                                className='action-button action-button--delete'
+                                title='삭제'>
+                                <RiDeleteBinLine />
+                            </button>
+                        </div>
                     </div>
-                    <div className='table-list-cell table-list-cell__actions'>
-                        <button
-                            onClick={() => onEdit(table.id)}
-                            className='action-button action-button--edit'
-                            title='수정'>
-                            <FiEdit2 />
-                        </button>
-                        <button
-                            onClick={() => onDelete(table.id)}
-                            className='action-button action-button--delete'
-                            title='삭제'>
-                            <RiDeleteBinLine />
-                        </button>
-                    </div>
-                </div>
-            ))}
-        </div>
+                ))}
+            </div>
+            <TableModal
+                isOpen={isModalOpen}
+                onClose={handleCloseModal}
+                initialData={selectedItem || undefined}
+                mode='edit'
+            />
+        </>
     )
 }

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import '@/widgets/admin/TableWidget/style/TableWidget.scss'
 import { BsTable } from 'react-icons/bs'
+import TableModal from './TableModal'
 
 interface TableItem {
     id: string
@@ -9,6 +10,7 @@ interface TableItem {
 }
 
 export default function TableImageList() {
+    const [isModalOpen, setIsModalOpen] = useState(false)
     // 테스트용 데이터
     const [tables] = useState<TableItem[]>([
         { id: 'T01', capacity: 4, status: 'available' },
@@ -22,37 +24,46 @@ export default function TableImageList() {
     ])
 
     return (
-        <div className='table-widget__image-section'>
-            <div className='table-widget__image-list-container'>
-                <div className='table-widget__image-list'>
-                    {tables.map((table) => (
-                        <div
-                            key={table.id}
-                            className={`table-widget__image-item ${
-                                table.status === 'available'
-                                    ? 'table-widget__image-item--available'
-                                    : 'table-widget__image-item--in-use'
-                            }`}>
-                            <div className='table-widget__image-item__id'>
-                                {table.id}
+        <>
+            <div className='table-widget__image-section'>
+                <div className='table-widget__image-list-container'>
+                    <div className='table-widget__image-list'>
+                        {tables.map((table) => (
+                            <div
+                                key={table.id}
+                                className={`table-widget__image-item ${
+                                    table.status === 'available'
+                                        ? 'table-widget__image-item--available'
+                                        : 'table-widget__image-item--in-use'
+                                }`}>
+                                <div className='table-widget__image-item__id'>
+                                    {table.id}
+                                </div>
+                                <div className='table-widget__image-item__status-indicator' />
+                                <div className='table-widget__image-item__image'>
+                                    <BsTable />
+                                </div>
+                                <div className='table-widget__image-item__capacity'>
+                                    {table.capacity}인
+                                </div>
                             </div>
-                            <div className='table-widget__image-item__status-indicator' />
-                            <div className='table-widget__image-item__image'>
-                                <BsTable />
-                            </div>
-                            <div className='table-widget__image-item__capacity'>
-                                {table.capacity}인
-                            </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
+                </div>
+                <div
+                    className='table-widget__add-button'
+                    onClick={() => setIsModalOpen(true)}>
+                    <div className='table-widget__add-button__icon'>+</div>
+                    <div className='table-widget__add-button__text'>
+                        새 테이블 추가
+                    </div>
                 </div>
             </div>
-            <div className='table-widget__add-button'>
-                <div className='table-widget__add-button__icon'>+</div>
-                <div className='table-widget__add-button__text'>
-                    새 테이블 추가
-                </div>
-            </div>
-        </div>
+            <TableModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                mode='create'
+            />
+        </>
     )
 }
