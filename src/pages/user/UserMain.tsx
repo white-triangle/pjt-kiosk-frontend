@@ -3,6 +3,7 @@ import UserOrder from './order'
 import './UserMain.scss'
 import HeaderNavigationBar from '@/shared/user/ui/HeaderNavigationBar'
 import UserDetail from './detail'
+import UserCart from './cart'
 
 export default function UserMain() {
     return (
@@ -11,10 +12,11 @@ export default function UserMain() {
                 <HeaderNavigationBar />
                 <div className='content-wrapper'>
                     {/* <UserOrder /> */}
-                    <UserDetail/>
+                    {/* <UserDetail /> */}
+                    <UserCart />
                 </div>
                 {/* Detail 페이지에서는 안나오도록 */}
-                {/* <NavigationBar/> */}
+                <NavigationBar />
             </div>
         </div>
     )

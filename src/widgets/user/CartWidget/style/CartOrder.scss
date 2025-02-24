@@ -1,0 +1,48 @@
+.cart-order-wrap {
+    border-top: 1px solid #e5e7eb;
+    height: 170px;
+    width: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+    bottom: 80px;
+
+    .order-receipt {
+        height: 25px;
+
+        .order-desc,
+        .order-price {
+            font-size: 16px;
+        }
+
+        .order-desc {
+            color: #4b5563;
+        }
+
+        .order-price {
+            font-weight: 800;
+        }
+
+        &.total-wrap {
+            height: 30px;
+            .order-desc,
+            .order-price {
+                font-size: 18px;
+            }
+
+            .order-desc {
+                font-weight: 800;
+                color: #000000;
+            }
+        }
+    }
+
+    .order-btn {
+        width: 550px;
+        height: 50px;
+        background-color: rgb(136, 136, 239);
+        color: #ffffff;
+        border-radius: 20px;
+        font-weight: 800;
+    }
+}
