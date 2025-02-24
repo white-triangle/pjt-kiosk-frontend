@@ -1,0 +1,60 @@
+.option-change-wrap {
+    border-top: 1px solid #e5e7eb;
+    height: 170px; 
+    min-height: 180px; 
+    max-height: 700px; 
+    width: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+    bottom: 80px;
+    overflow: hidden; 
+
+    .split {
+        height: 20px;
+        cursor: ns-resize;
+
+        span {
+            width: 64px;
+            height: 4px;
+            background-color: #ccc;
+        }
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 25px;
+        right: 15px;
+        color: #6b7280;
+    }
+
+    .option-change-content {
+        .option-title {
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .option-desc {
+            font-size: 14px;
+            color: #4b5563;
+        }
+
+        .option-list {
+            overflow-y: auto; 
+            scrollbar-width: none; 
+            -ms-overflow-style: none; 
+
+            &::-webkit-scrollbar {
+                display: none; 
+        }
+    }
+
+    .save-btn {
+        width: 550px;
+        height: 40px;
+        background-color: rgb(136, 136, 239);
+        color: #ffffff;
+        font-weight: 800;
+        border-radius: 20px;
+    }
+}

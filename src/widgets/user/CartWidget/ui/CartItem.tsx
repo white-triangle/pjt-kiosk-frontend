@@ -9,7 +9,11 @@ import {
     faMinus,
 } from '@fortawesome/free-solid-svg-icons'
 
-export default function CartItem() {
+interface CartItemProps {
+    onModify: () => void
+}
+
+export default function CartItem({ onModify }: CartItemProps) {
     const [quantity, setQuantity] = useState<number>(1)
 
     const handleIncrease = (): void => {
@@ -28,7 +32,7 @@ export default function CartItem() {
                 <div className='item-info'>
                     <h6 className='item-name'>Classic Burger</h6>
                     <p className='item-options'>Extra Cheese, Bacon</p>
-                    <p className='item-modify-btn'>
+                    <p className='item-modify-btn' onClick={onModify}>
                         <FontAwesomeIcon
                             className='mr-1'
                             icon={faPenToSquare}

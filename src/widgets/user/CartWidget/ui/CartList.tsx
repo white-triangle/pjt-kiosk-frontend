@@ -1,12 +1,16 @@
 import CartItem from './CartItem'
 import '../style/CartList.scss'
 
-export default function CartList() {
+interface CartListProps {
+    onModify: () => void
+}
+
+export default function CartList({ onModify }: CartListProps) {
     return (
         <div className='cart-list mt-5'>
-            <CartItem />
-            <CartItem />
-            <CartItem />
+            <CartItem onModify={onModify} />
+            <CartItem onModify={onModify} />
+            <CartItem onModify={onModify} />
         </div>
     )
 }
