@@ -1,0 +1,25 @@
+.footer-wrap {
+    .price-section {
+        .price-txt {
+            font-weight: 800;
+            font-size: 18px;
+        }
+        .total-price {
+            width: 95px;
+            font-weight: 800;
+            font-size: 20px;
+        }
+    }
+
+    .cancel-section {
+        .cancel-btn {
+            width: 100%;
+            height: 42px;
+            border-radius: 10px;
+            background-color: #ef4444;
+            color: #ffffff;
+            font-weight: 800;
+            cursor: pointer;
+        }
+    }
+}

@@ -4,6 +4,7 @@ import './UserMain.scss'
 import HeaderNavigationBar from '@/shared/user/ui/HeaderNavigationBar'
 import UserDetail from './detail'
 import UserCart from './cart'
+import UserHistory from './history'
 
 export default function UserMain() {
     return (
@@ -13,7 +14,8 @@ export default function UserMain() {
                 <div className='content-wrapper'>
                     {/* <UserOrder /> */}
                     {/* <UserDetail /> */}
-                    <UserCart />
+                    {/* <UserCart /> */}
+                    <UserHistory />
                 </div>
                 {/* Detail 페이지에서는 안나오도록 */}
                 <NavigationBar />
