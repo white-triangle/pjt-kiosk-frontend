@@ -3,6 +3,8 @@ import AdminMain from './pages/admin'
 import AdminDashboard from './pages/admin/dashboard'
 import Menu from './pages/admin/menu'
 import Table from './pages/admin/table'
+import Order from './pages/admin/order'
+import OrderDetail from './pages/admin/order/[id]'
 
 function App() {
     // 초기세팅 2025-01-19
@@ -15,6 +17,8 @@ function App() {
                     <Route path='dashboard' element={<AdminDashboard />} />
                     <Route path='menu' element={<Menu />} />
                     <Route path='table' element={<Table />} />
+                    <Route path='order' element={<Order />} />
+                    <Route path='order/:id' element={<OrderDetail />} />
 
                     {/* 어드민 내 기본 경로는 대시보드로 리다이렉트 */}
                     <Route
