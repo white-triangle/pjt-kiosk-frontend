@@ -1,0 +1,152 @@
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 400px; // 전체 컨테이너의 최소 높이 설정
+    position: relative; // 포지셔닝 컨텍스트 설정
+}
+
+.menu-list {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        height: 260px; // 고정 높이 설정 - 대시보드에 맞게 조정
+        overflow: visible; // hidden에서 visible로 변경하여 페이지네이션이 보이도록 함
+    }
+}
+
+.menu-content-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden; 
+}
+
+.list {
+    &__items {
+        min-height: 100px; 
+        overflow-y: auto; 
+ 
+      
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 3px;
+            
+            &:hover {
+                background: #555;
+            }
+        }
+    }
+
+    &__item {
+        padding: 12px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__header {
+        padding: 0 12px;
+        border-bottom: 1px solid #E5E7EB;
+        background-color: #f9fafb; // 헤더 배경색 추가하여 구분
+        position: sticky; // 스크롤 시 헤더 고정
+        top: 0; // 스크롤 시 상단에 고정
+        z-index: 10; // 다른 요소보다 앞에 표시
+    }
+
+    &__font-header {
+        color: #6B7280;
+    }
+}
+
+// 페이지네이션 컨테이너 스타일
+.menu-pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto; // 하단에 배치
+    padding: 0.5rem 0;
+    width: 100%;
+    overflow-x: auto; // 가로 스크롤이 필요한 경우에만 표시
+    overflow-y: hidden; // 세로 스크롤 방지
+    flex-shrink: 0; // 컨테이너가 축소되어도 페이지네이션 크기 유지
+    height: 10px; // 페이지네이션의 고정 높이 설정
+    border-top: 1px solid #f0f0f0; // 상단 구분선 추가
+}
+
+// 페이지네이션 스타일
+.menu-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; // 아이템 사이의 간격
+    flex-wrap: nowrap; // 줄바꿈 방지
+    padding: 0 0.5rem;
+}
+
+// 페이지네이션 점 스타일
+.pagination-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #E5E7EB;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: #D1D5DB;
+    }
+
+    &.active {
+        background: #6B7280;
+        transform: scale(1.2);
+    }
+}
+
+
+// 화면 크기에 따른 반응형 처리
+@media (max-width: 640px) {
+    .menu-pagination {
+        gap: 0.25rem; // 모바일에서는 간격 축소
+    }
+    
+    .pagination-dot {
+        width: 8px;
+        height: 8px;
+        margin: 0 3px;
+    }
+    
+    .pagination-control {
+        width: 24px;
+        height: 24px;
+        font-size: 0.875rem;
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+} 

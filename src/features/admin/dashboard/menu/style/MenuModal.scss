@@ -1,0 +1,60 @@
+.menu-modal {
+    &__overlay {
+        animation: fadeIn 0.2s ease-in-out;
+    }
+
+    &__content {
+        animation: slideIn 0.3s ease-out;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    &__close-btn {
+        font-size: 1.5rem;
+        line-height: 1;
+        transition: transform 0.2s;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    &__image {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    &__info-item {
+        margin-bottom: 0.75rem;
+        display: flex;
+        align-items: center;
+    }
+
+    &__label {
+        min-width: 5rem;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+} 
