@@ -1,0 +1,8 @@
+.cart-list {
+    height: calc(100vh - 450px);
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

@@ -5,6 +5,11 @@ export default function HistoryList() {
         <div className='list-wrap mt-4'>
             <HistoryCard />
             <HistoryCard />
+            <HistoryCard />
+            <HistoryCard />
+            <HistoryCard />
+            <HistoryCard />
+            <HistoryCard />
         </div>
     )
 }

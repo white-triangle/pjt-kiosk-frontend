@@ -1,0 +1,8 @@
+.menulist-wrap {
+    height: calc(100vh - 510px); // MenuCategory의 높이를 뺀 값
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

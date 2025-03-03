@@ -11,6 +11,15 @@ export default function CartList({ onModify }: CartListProps) {
             <CartItem onModify={onModify} />
             <CartItem onModify={onModify} />
             <CartItem onModify={onModify} />
+            <CartItem onModify={onModify} />
+            <CartItem onModify={onModify} />
+            <CartItem onModify={onModify} />
+            <CartItem onModify={onModify} />
+            <CartItem onModify={onModify} />
+            <CartItem onModify={onModify} />
+            <CartItem onModify={onModify} />
+            <CartItem onModify={onModify} />
+            <CartItem onModify={onModify} />
         </div>
     )
 }

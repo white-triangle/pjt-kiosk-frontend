@@ -6,9 +6,11 @@ import MenuDetailImg from './ui/MenuDetailImg'
 export default function MenuDetailWidget() {
     return (
         <>
-            <MenuDetailHeader/>
-            <MenuDetailImg/>
-            <MenuDetailCard/>
+            <MenuDetailHeader />
+            <div className='detail-contents'>
+                <MenuDetailImg />
+                <MenuDetailCard />
+            </div>
         </>
     )
 }
