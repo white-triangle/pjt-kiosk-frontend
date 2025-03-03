@@ -1,24 +1,20 @@
 import NavigationBar from '@/shared/user/ui/NavigationBar'
-import UserOrder from './order'
 import './UserMain.scss'
 import HeaderNavigationBar from '@/shared/user/ui/HeaderNavigationBar'
-import UserDetail from './detail'
-import UserCart from './cart'
-import UserHistory from './history'
+import { Outlet, useLocation } from 'react-router-dom'
 
 export default function UserMain() {
+    const location = useLocation()
+    const isDetailPage = location.pathname.startsWith('/detail/')
     return (
         <div className='user-main'>
             <div className='user-wrap'>
                 <HeaderNavigationBar />
                 <div className='content-wrapper'>
-                    {/* <UserOrder /> */}
-                    {/* <UserDetail /> */}
-                    {/* <UserCart /> */}
-                    <UserHistory />
+                    <Outlet />
                 </div>
                 {/* Detail 페이지에서는 안나오도록 */}
-                <NavigationBar />
+                {!isDetailPage && <NavigationBar />}
             </div>
         </div>
     )

@@ -1,8 +1,8 @@
 .menulist-wrap {
-  height: 450px; 
-  overflow-y: scroll;
-  
-  &::-webkit-scrollbar {
-    display: none;
-  }
+    height: 400px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }

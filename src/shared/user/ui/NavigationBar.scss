@@ -7,15 +7,16 @@
 
     .nav-tab {
         color: #ccc;
-        
+        cursor: pointer;
+
         &.selected {
             color: #000000;
 
             svg {
-                color: #000000;  
+                color: #000000;
             }
         }
-        
+
         p {
             font-size: 12px;
             font-weight: bold;
@@ -23,8 +24,7 @@
 
         svg {
             font-size: 22px;
-            color: #ccc;  
+            color: #ccc;
         }
     }
-    
 }
