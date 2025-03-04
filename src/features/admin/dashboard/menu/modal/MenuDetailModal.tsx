@@ -40,7 +40,7 @@ export default function MenuDetailModal({
 
                 <h2
                     id='menu-detail-title'
-                    className='text-xl font-bold mb-4 text-indigo-700 border-b pb-2'>
+                    className='text-xl font-bold mb-4  border-b pb-2'>
                     {selectedMenu.name}
                 </h2>
 
@@ -73,7 +73,7 @@ export default function MenuDetailModal({
                             <span className='font-semibold menu-modal__label'>
                                 가격:
                             </span>
-                            <span className='ml-2 text-indigo-700 font-bold'>
+                            <span className='ml-2  font-bold'>
                                 {selectedMenu.price.toLocaleString()}원
                             </span>
                         </div>
@@ -123,7 +123,7 @@ export default function MenuDetailModal({
                         닫기
                     </button>
                     <button
-                        className='px-4 py-2 bg-indigo-500 text-white rounded hover:bg-indigo-600 transition-colors'
+                        className='px-4 py-2 bg-black  text-white rounded  transition-colors'
                         onClick={() => {
                             // 상세 페이지 구현 시 활성화
                             alert('상세 페이지 기능은 아직 준비 중입니다.')

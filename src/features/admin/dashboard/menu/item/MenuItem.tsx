@@ -26,16 +26,14 @@ export default function MenuItem({ item, onSelect }: MenuItemProps) {
                 )}
             </div>
             <div className='flex-1 list__item'>
-                <span className='text-indigo-600 hover:text-indigo-800'>
-                    {item.name}
-                </span>
+                <span className='text-sm font-semibold'>{item.name}</span>
             </div>
             <div className='flex-1 list__item'>
                 <span className='px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-800'>
                     {MENU_CATEGORY_LABELS[item.category]}
                 </span>
             </div>
-            <div className='flex-1 list__item'>
+            <div className='flex-1 list__item text-sm'>
                 {item.price.toLocaleString()}원
             </div>
             <div className='flex-1 list__item'>
