@@ -15,7 +15,7 @@ import {
     getMenuCategoryLabel,
 } from '@/entities/admin/dashboard/model/menuStatusselectors'
 import { useMemo } from 'react'
-import { useMenuList } from '@/entities/admin/dashboard/api/menu'
+import { useMenuList } from '@/entities/admin/dashboard'
 import { MenuData } from '../type/menuInterface'
 
 // 메뉴 상태 타입 정의 (availability 파라미터에 맞춰 정의)
