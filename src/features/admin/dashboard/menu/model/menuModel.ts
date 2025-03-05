@@ -40,9 +40,7 @@ export const createMenuFilterOptions = (
     return options
 }
 
-/**
- * 메뉴 데이터를 가져오는 훅 selector 함수 적용로직
- */
+
 export const useMenuData = (
     activeStatus: MenuStatusType | MenuCategory,
     page: number = 1,

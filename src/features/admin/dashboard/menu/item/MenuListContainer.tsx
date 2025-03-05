@@ -1,27 +1,17 @@
-import { MenuCategory, Menu } from '@/entities/admin/dashboard/model/types'
 import MenuItemList from './MenuItemList'
-import { MenuStatusType, useMenuData } from '../model'
+import { useMenuData } from '../model'
+import useMenuStore from '@/shared/admin/store/dashboard/menuStore'
 
-interface MenuListContainerProps {
-    activeStatus: MenuStatusType | MenuCategory
-    page: number
-    limit?: number
-    searchTerm?: string
-    onMenuSelect?: (menu: Menu) => void
-}
+export const MenuListContainer = () => {
+    // Zustand 스토어에서 상태와 액션을 가져옵니다
+    const { activeStatus, currentPage, itemsPerPage, handleMenuSelect } =
+        useMenuStore()
 
-export const MenuListContainer = ({
-    activeStatus,
-    page,
-    limit = 10,
-    searchTerm,
-    onMenuSelect = () => {},
-}: MenuListContainerProps) => {
+    // 서버 데이터를 가져옵니다
     const { menus, isLoading, error } = useMenuData(
         activeStatus,
-        page,
-        limit,
-        searchTerm
+        currentPage,
+        itemsPerPage
     )
 
     return (
@@ -30,7 +20,7 @@ export const MenuListContainer = ({
             isLoading={isLoading}
             isError={!!error}
             error={error}
-            onMenuSelect={onMenuSelect}
+            onMenuSelect={handleMenuSelect}
             activeStatus={typeof activeStatus === 'string' ? activeStatus : ''}
         />
     )

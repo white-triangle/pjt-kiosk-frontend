@@ -1,35 +1,31 @@
-import { useCallback } from 'react'
-import { MenuCategory } from '@/entities/admin/dashboard/model/types'
-import { MenuStatusType, useMenuData } from '../model'
+import { useCallback, useEffect } from 'react'
+import { useMenuData } from '../model'
 import MenuPagination from './MenuPagination'
+import useMenuStore from '@/shared/admin/store/dashboard/menuStore'
 
-interface MenuPaginationContainerProps {
-    activeStatus: MenuStatusType | MenuCategory
-    currentPage: number
-    onPageChange: (page: number) => void
-    limit?: number
-    searchTerm?: string
-}
-
-export const MenuPaginationContainer = ({
-    activeStatus,
-    currentPage,
-    onPageChange,
-    limit = 10,
-    searchTerm,
-}: MenuPaginationContainerProps) => {
-    const { totalPages } = useMenuData(
+export const MenuPaginationContainer = () => {
+    // Zustand 스토어에서 상태와 액션을 가져옵니다
+    const {
         activeStatus,
         currentPage,
-        limit,
-        searchTerm
-    )
+        itemsPerPage,
+        setCurrentPage,
+        setTotalPages,
+    } = useMenuStore()
+
+    // 서버 데이터를 가져옵니다
+    const { totalPages } = useMenuData(activeStatus, currentPage, itemsPerPage)
+
+    // 서버에서 받은 totalPages를 스토어에 동기화합니다
+    useEffect(() => {
+        setTotalPages(totalPages)
+    }, [totalPages, setTotalPages])
 
     const handlePageChange = useCallback(
         (page: number) => {
-            onPageChange(page)
+            setCurrentPage(page)
         },
-        [onPageChange]
+        [setCurrentPage]
     )
 
     if (totalPages <= 1) {

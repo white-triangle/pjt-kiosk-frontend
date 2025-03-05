@@ -1,8 +1,5 @@
-// import MenuHeader from './MenuHeader'
-// import MenuItems from './MenuItems'
-
+import MenuContainer from '@/features/admin/dashboard/menu/ui'
 import '../style/MenuList.scss'
-import { MenuItems } from '@/features/admin/dashboard/menu'
 
 export default function MenuList() {
     // 이미지,메뉴명,카테고리,가격
@@ -10,7 +7,7 @@ export default function MenuList() {
         <div className='menu-list__container'>
             {/* <MenuHeader /> */}
             {/* <MenuItems /> */}
-            <MenuItems />
+            <MenuContainer />
         </div>
     )
 }
