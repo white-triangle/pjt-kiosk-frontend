@@ -10,14 +10,10 @@ import useMenuStore from '@/shared/admin/store/dashboard/menuStore'
 export default function MenuContainer() {
     // Zustand 스토어에서 상태와 액션을 가져옵니다
     const {
-        currentPage,
         activeStatus,
         selectedMenu,
-        itemsPerPage,
         handleStatusChange,
-        handleMenuSelect,
         closeMenuDetail,
-        setCurrentPage,
     } = useMenuStore()
 
     // ESC 키로 모달 닫기

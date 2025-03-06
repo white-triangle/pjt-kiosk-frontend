@@ -1,0 +1,130 @@
+.table-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    position: relative;
+    padding: 0 24px;
+}
+
+.table-item-list {
+    min-height: 150px;
+}
+
+.table-tab {
+    margin-bottom: 16px;
+}
+
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 1;
+}
+
+// 페이지네이션 도트 스타일
+.carousel-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 0;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #E5E7EB;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: #D1D5DB;
+    }
+
+    &.active {
+        background: #6B7280;
+        transform: scale(1.2);
+    }
+}
+
+// 테이블 상태 스타일
+.status-available {
+    color: #16A34A;
+    background-color: #F0FDF4;
+}
+
+.status-occupied {
+    color: #DC2626;
+    background-color: #FEF2F2;
+}
+
+// 테이블 그리드 스타일
+.table-item-list {
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 16px 0;
+        flex: 1;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+}
+
+// 테이블 아이템 스타일
+.table-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 160px;
+    height: 120px;
+    flex-shrink: 0;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    // 사용 가능 상태
+    &.status-available {
+        background: #F0FDF4;
+        border: 1px solid #BBF7D0;
+        
+        .table-number {
+            color: #166534;
+        }
+        
+        .table-status {
+            color: #16A34A;
+        }
+        
+        &:hover {
+            background: #DCFCE7;
+        }
+    }
+    
+    // 사용중 상태
+    &.status-occupied {
+        background: #FEF2F2;
+        border: 1px solid #FECACA;
+        
+        .table-number {
+            color: #991B1B;
+        }
+        
+        .table-status {
+            color: #DC2626;
+        }
+        
+        &:hover {
+            background: #FEE2E2;
+        }
+    }
+} 
