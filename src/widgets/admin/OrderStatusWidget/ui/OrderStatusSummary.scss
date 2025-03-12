@@ -1,0 +1,88 @@
+// 변수 정의
+$background-color: #f8f9fa;
+$border-radius: 6px;
+$text-color: #495057;
+$processing-color: #ffc107;
+$completed-color: #28a745;
+$total-color: #3b86ff;
+$loading-opacity: 0.6;
+$error-color: #dc3545;
+
+/**
+ * 주문 상태 요약 정보를 표시하는 컴포넌트 스타일
+ */
+.order-status-summary {
+    display: flex;
+    justify-content: space-between;
+    background-color: $background-color;
+    border-radius: $border-radius;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    
+    // 로딩 중인 경우
+    &--loading {
+        opacity: $loading-opacity;
+    }
+    
+    // 에러가 발생한 경우
+    &--error {
+        color: $error-color;
+        text-align: center;
+        justify-content: center;
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+    
+    // 개별 상태 아이템
+    &__item {
+        text-align: center;
+        flex: 1;
+        padding: 0 6px;
+        position: relative;
+        
+        // 첫 번째 아이템을 제외한 모든 아이템 앞에 구분선 추가
+        &:not(:first-child)::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        // 처리 중 상태
+        &--processing {
+            .order-status-summary__count {
+                color: $processing-color;
+            }
+        }
+        
+        // 완료 상태
+        &--completed {
+            .order-status-summary__count {
+                color: $completed-color;
+            }
+        }
+        
+        // 전체 상태
+        &--total {
+            .order-status-summary__count {
+                color: $total-color;
+            }
+        }
+    }
+    
+    // 레이블 스타일
+    &__label {
+        font-size: 0.8rem;
+        color: $text-color;
+        margin-bottom: 2px;
+    }
+    
+    // 카운트 스타일
+    &__count {
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+} 

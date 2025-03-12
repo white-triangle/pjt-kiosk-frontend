@@ -12,10 +12,8 @@ export const TablePaginationContainer = () => {
         setTotalPages,
     } = useTableStore()
 
-    // 서버 데이터를 가져옵니다
     const { totalPages } = useTableData(activeStatus, currentPage, itemsPerPage)
 
-    // 서버에서 받은 totalPages를 스토어에 동기화합니다
     useEffect(() => {
         setTotalPages(totalPages)
     }, [totalPages, setTotalPages])

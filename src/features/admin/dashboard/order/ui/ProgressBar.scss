@@ -1,0 +1,42 @@
+// 프로그래스 바 변수
+$progress-bg-color: #eaeaea;
+$progress-color-start: #0066ff;
+$progress-color-mid: #4d94ff;
+$progress-color-end: #0066ff;
+$border-radius: 3px;
+$shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+// 키프레임 애니메이션
+@keyframes progress-shine {
+    0% {
+        background-position: 0% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.progress-bar-container {
+    background-color: $progress-bg-color;
+    border-radius: $border-radius;
+    position: relative;
+    z-index: 20;
+    overflow: hidden;
+    box-shadow: $shadow;
+    margin-bottom: 4px;
+    width: 100%;
+    
+    .progress-bar {
+        height: 100%;
+        background: linear-gradient(
+            90deg, 
+            $progress-color-start 0%, 
+            $progress-color-mid 50%, 
+            $progress-color-end 100%
+        );
+        background-size: 200% 100%;
+        animation: progress-shine 2s linear infinite;
+        transition: width 0.3s ease;
+        border-radius: $border-radius;
+    }
+} 

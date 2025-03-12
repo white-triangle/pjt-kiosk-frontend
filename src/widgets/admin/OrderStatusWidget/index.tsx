@@ -1,16 +1,15 @@
-import OrderList from './ui/OrderList'
-import OrderStatusCard from './ui/OrderStatusCard'
-import '@/shared/admin/styles/Widget.scss'
-export default function OrderStatusWidget() {
+import React from 'react'
+import { OrderItems } from '@/features/admin/dashboard/order'
+import { OrderStatusSummary } from './ui/OrderStatusSummary'
+import './OrderStatusWidget.scss'
+
+const OrderStatusWidget: React.FC = () => {
     return (
-        <div>
-            <div className='widget-header'>실시간 주문현황</div>
-            {/* 실시간 주문현황 상태 ex> 처리 중 8, 완료 45 */}
-            <OrderStatusCard />
-            {/* 주문 목록(주문번호, 테이블, 메뉴, 상태, 시간)  */}
-            <OrderList />
+        <div className='order-status-widget'>
+            <OrderStatusSummary />
+            <OrderItems />
         </div>
     )
 }
 
-export { OrderStatusCard, OrderList }
+export default OrderStatusWidget

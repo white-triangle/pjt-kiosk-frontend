@@ -1,0 +1,148 @@
+// 변수 정의
+$white: #ffffff;
+$primary-color: #3b86ff;
+$primary-light: #e3f2fd;
+$text-color: #495057;
+$text-muted: #6c757d;
+$border-color: #e9ecef;
+$hover-bg: #f8f9fa;
+$active-text: #ffffff;
+$all-bg: #f2f2f2;
+$all-active-bg: #757575;
+$processing-bg: #e3f2fd;
+$processing-active-bg: #1976d2;
+$completed-bg: #e8f5e9;
+$completed-active-bg: #388e3c;
+
+.order-tab {
+    display: flex;
+    gap: 8px;
+    padding: 4px;
+    background-color: $white;
+    border-radius: 100px;
+    border: 1px solid $border-color;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    
+    &__item {
+        flex: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 16px;
+        border-radius: 100px;
+        border: none;
+        background: none;
+        font-size: 14px;
+        font-weight: 500;
+        color: $text-color;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        position: relative;
+        white-space: nowrap;
+        
+        // 카운트 뱃지
+        .count-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 20px;
+            height: 20px;
+            padding: 0 6px;
+            margin-left: 6px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.08);
+            color: inherit;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        &:hover:not(&--active) {
+            background-color: $hover-bg;
+        }
+        
+        // 전체 탭
+        &[data-status="null"] {
+            &.order-tab__item--active {
+                background-color: $all-active-bg;
+                color: $active-text;
+                
+                .count-badge {
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+            }
+            
+            &:not(.order-tab__item--active) {
+                background-color: $all-bg;
+                
+                &:hover {
+                    background-color: darken($all-bg, 5%);
+                }
+            }
+        }
+        
+        // 처리 중 탭
+        &[data-status="processing"] {
+            &.order-tab__item--active {
+                background-color: $processing-active-bg;
+                color: $active-text;
+                
+                .count-badge {
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+            }
+            
+            &:not(.order-tab__item--active) {
+                background-color: $processing-bg;
+                color: $processing-active-bg;
+                
+                &:hover {
+                    background-color: darken($processing-bg, 5%);
+                }
+            }
+        }
+        
+        // 완료 탭
+        &[data-status="completed"] {
+            &.order-tab__item--active {
+                background-color: $completed-active-bg;
+                color: $active-text;
+                
+                .count-badge {
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+            }
+            
+            &:not(.order-tab__item--active) {
+                background-color: $completed-bg;
+                color: $completed-active-bg;
+                
+                &:hover {
+                    background-color: darken($completed-bg, 5%);
+                }
+            }
+        }
+        
+        // 활성화 상태
+        &--active {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    }
+    
+    // 반응형 디자인
+    @media (max-width: 576px) {
+        gap: 4px;
+        padding: 3px;
+        
+        &__item {
+            padding: 6px 12px;
+            font-size: 13px;
+            
+            .count-badge {
+                min-width: 18px;
+                height: 18px;
+                font-size: 11px;
+                margin-left: 4px;
+            }
+        }
+    }
+} 
